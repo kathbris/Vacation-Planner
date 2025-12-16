@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vacation Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- jsPDF & html2canvas via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaR4ooxVv7YvB6qWgW1S1C1aUPO2bW+o4NnOe5w8f1D3HkYzO7b0qO8mWQjbcjHnYVxO5tE9w4wzv1rVJzE7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-5bEwlb7k9eFpjfskk2p6+vN6N2LrmwVnRCP1vJm+3aQIVm7S7wD2bvtHqM+AW2uS2z7S5IYISWQnLJHqPHiU7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+  <header>
+    <h1>Vacation Planner</h1>
+    <p>Mark your days off, see totals, and print to PDF</p>
+  </header>
+
+  <section id="controls">
+    <form id="plannerForm">
+      <div class="row">
+        <label>Employee name</label>
+        <input id="employeeName" type="text" value="" placeholder="Your name" />
+      </div>
+      <div class="row">
+        <label>Manager</label>
+        <input id="managerName" type="text" value="" placeholder="Manager" />
+      </div>
+      <div class="row">
+        <label>Province / Region</label>
+        <select id="region">
+          <option value="Alberta" selected>Alberta</option>
+          <option value="Canada (Federal)">Canada (Federal)</option>
+        </select>
+      </div>
+      <div class="row">
+        <label>Year</label>
+        <input id="year" type="number" value="2025" min="2025" max="2027" />
+      </div>
+      <fieldset class="months">
+        <legend>Months to display</legend>
+        <div class="month-list">
+          <!-- 12 checkboxes -->
+        </div>
+      </fieldset>
+      <div class="row options">
+        <label><input type="checkbox" id="excludeWeekends" checked /> Exclude weekends from totals</label>
+        <label><input type="checkbox" id="excludeHolidays" checked /> Exclude holidays from totals</label>
+      </div>
+      <div class="row">
+        <label>Number of holidays</label>
+        <div style="display:flex;align-items:center;gap:.5rem;">
+          <input id="holidayBudget" type="number" min="0" value="43" />
+          <small id="holidayTally">Selected: 0 • Remaining: 43</small>
+        </div>
+      </div>
+      <div class="actions">
+        <button type="button" id="buildBtn">Build calendar</button>
+        <button type="button" id="clearBtn" class="secondary">Clear marks</button>
+        <button type="button" id="exportBtn" class="primary">Print</button>
+      </div>
+    </form>
+  </section>
+
+  <main id="calendarContainer" class="print-area">
+    <!-- Calendars will be injected here -->
+  </main>
+
+  <footer>
+    <small>Holidays are highlighted; click any date to toggle vacation. Optional civic holidays are shown with a dashed underline. Statutory holidays are grayed and cannot be selected.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

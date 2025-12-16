@@ -1,0 +1,76 @@
+
+:root{
+  --bg:#0b132b; --card:#1c2541; --accent:#3a506b; --ink:#ffffff; --muted:#cbd5e1; --holiday:#ffe08a; --optional:#c9f0ff; --weekend:#f3f4f6; --vacation:#22c55e;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,sans-serif;background:var(--bg);color:var(--ink)}
+header,footer{padding:1rem 2rem}
+header h1{margin:0 0 .25rem}
+#controls{background:var(--card);padding:1rem 2rem;border-bottom:1px solid #2a345b}
+form#plannerForm{display:grid;gap:.75rem;grid-template-columns:repeat(12,1fr);align-items:end}
+.row{grid-column:span 4;display:flex;gap:.5rem;align-items:center}
+.row label{min-width:9rem}
+.row input, select{flex:1;padding:.5rem;border-radius:.4rem;border:1px solid #49507c;background:#0f1733;color:#fff}
+.months{grid-column:1 / -1;border:1px solid #2a345b;border-radius:.5rem;padding:.5rem}
+.months legend{padding:0 .5rem}
+.month-list{display:grid;grid-template-columns:repeat(12,1fr);gap:.5rem;margin-top:.5rem}
+.month-pill{display:flex;align-items:center;gap:.4rem;background:#0f1733;border:1px solid #2a345b;border-radius:.5rem;padding:.4rem .6rem}
+.actions{grid-column:1 / -1;display:flex;gap:.5rem;justify-content:flex-end}
+button{padding:.6rem 1rem;border:none;border-radius:.5rem;background:var(--accent);color:#fff;font-weight:600;cursor:pointer}
+button.secondary{background:#374151}
+button.primary{background:#16a34a}
+#calendarContainer{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;padding:1rem 2rem}
+.calendar{background:white;color:#111;border-radius:.75rem;box-shadow:0 2px 10px rgba(0,0,0,.25);overflow:hidden}
+.calendar header{background:#0f172a;color:white;padding:.5rem .75rem}
+.calendar header .meta{font-size:.85rem;color:#cbd5e1}
+.grid{padding:.5rem}
+.weekdays{display:grid;grid-template-columns:auto repeat(5,1fr);gap:.25rem;margin-bottom:.25rem}
+.weekdays div{font-size:.8rem;color:#334155;text-align:center}
+.days{display:grid;grid-template-columns:auto repeat(5,1fr);gap:.25rem}
+.week-checkbox{width:1.2rem;height:1.2rem;margin:.25rem auto;cursor:pointer;accent-color:#3a506b}
+.day{position:relative;background:#f8fafc;border:1px solid #e2e8f0;border-radius:.4rem;min-height:3.2rem;padding:.35rem;font-weight:600;color:#0f172a;cursor:pointer}
+.day.empty{background:transparent;border:none;cursor:default}
+.day.weekend{background:var(--weekend)}
+.day.holiday{outline:2px solid #f59e0b;background:#fff7ed}
+/* Statutory holidays are grayed and cannot be selected */
+.day.statutory{background:#e5e7eb;border-color:#d1d5db;color:#374151;cursor:default}
+.day.optional{border-bottom:2px dashed #60a5fa}
+.day .label{position:absolute;right:.35rem;bottom:.25rem;font-size:.7rem;color:#374151}
+.day.vacation{background:#dcfce7;border-color:#86efac;border:2px solid #000000;position:relative}
+.day.vacation::before,.day.vacation::after{content:'';position:absolute;top:50%;left:50%;width:80%;height:2px;background:#000000;transform-origin:center}
+.day.vacation::before{transform:translate(-50%,-50%) rotate(45deg)}
+.day.vacation::after{transform:translate(-50%,-50%) rotate(-45deg)}
+.totals{display:flex;justify-content:space-between;align-items:center;padding:.5rem .75rem;border-top:1px solid #e2e8f0;background:#f9fafb;font-size:.9rem}
+.badge{display:inline-flex;align-items:center;gap:.375rem;padding:.25rem .5rem;border-radius:.5rem;background:#eef2ff;color:#3730a3}
+.badge .swatch{width:.8rem;height:.8rem;border-radius:.25rem}
+.badge .swatch.h{background:#f59e0b}
+.badge .swatch.o{background:#60a5fa}
+.badge .swatch.s{background:#9ca3af}
+.badge .swatch.w{background:#e5e7eb}
+
+/* Print styles - landscape single page */
+@media print{
+  @page{size:landscape;margin:0.5cm}
+  body{background:white;color:black;margin:0;padding:0}
+  #controls, footer, #grandTotal{display:none}
+  #printHeader{display:block!important;page-break-after:avoid;margin-bottom:.5rem;font-size:.85rem}
+  #printHeader h2{font-size:1.1rem;margin:.25rem 0}
+  #printHeader p{font-size:.8rem;margin:0}
+  #calendarContainer{padding:0;gap:.3rem;display:grid!important;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))!important;max-width:100%}
+  .calendar{break-inside:avoid;page-break-inside:avoid;font-size:.75rem}
+  .calendar header{padding:.3rem .5rem;font-size:.85rem}
+  .calendar header .meta{font-size:.7rem}
+  .grid{padding:.3rem}
+  .weekdays{margin-bottom:.2rem;gap:.15rem}
+  .weekdays div{font-size:.65rem}
+  .days{gap:.15rem}
+  .day{min-height:2rem;padding:.2rem;font-size:.7rem}
+  .day .label{font-size:.55rem;right:.2rem;bottom:.15rem}
+  .day.vacation{background:#dcfce7!important;border-color:#86efac!important}
+  .day.vacation::before,.day.vacation::after{content:''!important;position:absolute!important;top:50%!important;left:50%!important;width:80%!important;height:2px!important;background:#000000!important}
+  .day.vacation::before{transform:translate(-50%,-50%) rotate(45deg)!important}
+  .day.vacation::after{transform:translate(-50%,-50%) rotate(-45deg)!important}
+  .totals{padding:.3rem .4rem;font-size:.7rem;flex-wrap:wrap;gap:.2rem}
+  .badge{padding:.15rem .3rem;font-size:.65rem}
+  .badge .swatch{width:.6rem;height:.6rem}
+}

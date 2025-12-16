@@ -1,0 +1,1555 @@
+{
+  "years": {
+    "2025": {
+      "Canada (Federal)": [
+        {
+          "name": "New Year's Day",
+          "date": "2025-01-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2025-04-18",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Easter Monday",
+          "date": "2025-04-21",
+          "type": "Federal (public service)"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2025-05-19",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Saint-Jean-Baptiste Day (QC)",
+          "date": "2025-06-24",
+          "type": "Quebec statutory"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2025-07-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Civic Holiday (varies by province)",
+          "date": "2025-08-04",
+          "type": "Civic / provincial"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2025-09-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "National Day for Truth and Reconciliation",
+          "date": "2025-09-30",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2025-10-13",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2025-11-11",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2025-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2025-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2025-12-25",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Boxing Day",
+          "date": "2025-12-26",
+          "type": "Federal (widely observed)"
+        }
+      ],
+      "Alberta": [
+        {
+          "name": "New Year's Day",
+          "date": "2025-01-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Family Day (AB)",
+          "date": "2025-02-17",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2025-04-18",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2025-05-19",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2025-07-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Heritage Day (AB)",
+          "date": "2025-08-04",
+          "type": "Optional / civic"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2025-09-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2025-10-13",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2025-11-11",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2025-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2025-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2025-12-25",
+          "type": "Alberta general holiday"
+        }
+      ]
+    },
+    "2026": {
+      "Canada (Federal)": [
+        {
+          "name": "New Year's Day",
+          "date": "2026-01-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2026-04-03",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Easter Monday",
+          "date": "2026-04-06",
+          "type": "Federal (public service)"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2026-05-18",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Saint-Jean-Baptiste Day (QC)",
+          "date": "2026-06-24",
+          "type": "Quebec statutory"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2026-07-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Civic Holiday (varies by province)",
+          "date": "2026-08-03",
+          "type": "Civic / provincial"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2026-09-07",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "National Day for Truth and Reconciliation",
+          "date": "2026-09-30",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2026-10-12",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2026-11-11",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2026-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2026-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2026-12-25",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Boxing Day",
+          "date": "2026-12-26",
+          "type": "Federal (widely observed)"
+        }
+      ],
+      "Alberta": [
+        {
+          "name": "New Year's Day",
+          "date": "2026-01-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Family Day (AB)",
+          "date": "2026-02-16",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2026-04-03",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2026-05-18",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2026-07-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Heritage Day (AB)",
+          "date": "2026-08-03",
+          "type": "Optional / civic"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2026-09-07",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2026-10-12",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2026-11-11",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2026-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2026-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2026-12-25",
+          "type": "Alberta general holiday"
+        }
+      ]
+    },
+    "2027": {
+      "Canada (Federal)": [
+        {
+          "name": "New Year's Day",
+          "date": "2027-01-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2027-03-26",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Easter Monday",
+          "date": "2027-03-29",
+          "type": "Federal (public service)"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2027-05-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Saint-Jean-Baptiste Day (QC)",
+          "date": "2027-06-24",
+          "type": "Quebec statutory"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2027-07-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Civic Holiday (varies by province)",
+          "date": "2027-08-02",
+          "type": "Civic / provincial"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2027-09-06",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "National Day for Truth and Reconciliation",
+          "date": "2027-09-30",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2027-10-11",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2027-11-11",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2027-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2027-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2027-12-25",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Boxing Day",
+          "date": "2027-12-26",
+          "type": "Federal (widely observed)"
+        }
+      ],
+      "Alberta": [
+        {
+          "name": "New Year's Day",
+          "date": "2027-01-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Family Day (AB)",
+          "date": "2027-02-15",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2027-03-26",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2027-05-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2027-07-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Heritage Day (AB)",
+          "date": "2027-08-02",
+          "type": "Optional / civic"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2027-09-06",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2027-10-11",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2027-11-11",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2027-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2027-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2027-12-25",
+          "type": "Alberta general holiday"
+        }
+      ]
+    },
+    "2028": {
+      "Canada (Federal)": [
+        {
+          "name": "New Year's Day",
+          "date": "2028-01-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2028-04-14",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Easter Monday",
+          "date": "2028-04-17",
+          "type": "Federal (public service)"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2028-05-22",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Saint-Jean-Baptiste Day (QC)",
+          "date": "2028-06-24",
+          "type": "Quebec statutory"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2028-07-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Civic Holiday (varies by province)",
+          "date": "2028-08-07",
+          "type": "Civic / provincial"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2028-09-04",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "National Day for Truth and Reconciliation",
+          "date": "2028-09-30",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2028-10-09",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2028-11-11",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2028-12-22",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2028-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2028-12-25",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Boxing Day",
+          "date": "2028-12-26",
+          "type": "Federal (widely observed)"
+        }
+      ],
+      "Alberta": [
+        {
+          "name": "New Year's Day",
+          "date": "2028-01-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Family Day (AB)",
+          "date": "2028-02-21",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2028-04-14",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2028-05-22",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2028-07-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Heritage Day (AB)",
+          "date": "2028-08-07",
+          "type": "Optional / civic"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2028-09-04",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2028-10-09",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2028-11-11",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2028-12-22",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2028-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2028-12-25",
+          "type": "Alberta general holiday"
+        }
+      ]
+    },
+    "2029": {
+      "Canada (Federal)": [
+        {
+          "name": "New Year's Day",
+          "date": "2029-01-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2029-03-30",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Easter Monday",
+          "date": "2029-04-02",
+          "type": "Federal (public service)"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2029-05-21",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Saint-Jean-Baptiste Day (QC)",
+          "date": "2029-06-24",
+          "type": "Quebec statutory"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2029-07-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Civic Holiday (varies by province)",
+          "date": "2029-08-06",
+          "type": "Civic / provincial"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2029-09-03",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "National Day for Truth and Reconciliation",
+          "date": "2029-09-30",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2029-10-08",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2029-11-11",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2029-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2029-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2029-12-25",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Boxing Day",
+          "date": "2029-12-26",
+          "type": "Federal (widely observed)"
+        }
+      ],
+      "Alberta": [
+        {
+          "name": "New Year's Day",
+          "date": "2029-01-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Family Day (AB)",
+          "date": "2029-02-19",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2029-03-30",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2029-05-21",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2029-07-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Heritage Day (AB)",
+          "date": "2029-08-06",
+          "type": "Optional / civic"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2029-09-03",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2029-10-08",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2029-11-11",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2029-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2029-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2029-12-25",
+          "type": "Alberta general holiday"
+        }
+      ]
+    },
+    "2030": {
+      "Canada (Federal)": [
+        {
+          "name": "New Year's Day",
+          "date": "2030-01-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2030-04-19",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Easter Monday",
+          "date": "2030-04-22",
+          "type": "Federal (public service)"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2030-05-20",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Saint-Jean-Baptiste Day (QC)",
+          "date": "2030-06-24",
+          "type": "Quebec statutory"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2030-07-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Civic Holiday (varies by province)",
+          "date": "2030-08-05",
+          "type": "Civic / provincial"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2030-09-02",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "National Day for Truth and Reconciliation",
+          "date": "2030-09-30",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2030-10-14",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2030-11-11",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2030-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2030-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2030-12-25",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Boxing Day",
+          "date": "2030-12-26",
+          "type": "Federal (widely observed)"
+        }
+      ],
+      "Alberta": [
+        {
+          "name": "New Year's Day",
+          "date": "2030-01-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Family Day (AB)",
+          "date": "2030-02-18",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2030-04-19",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2030-05-20",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2030-07-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Heritage Day (AB)",
+          "date": "2030-08-05",
+          "type": "Optional / civic"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2030-09-02",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2030-10-14",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2030-11-11",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2030-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2030-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2030-12-25",
+          "type": "Alberta general holiday"
+        }
+      ]
+    },
+    "2031": {
+      "Canada (Federal)": [
+        {
+          "name": "New Year's Day",
+          "date": "2031-01-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2031-04-11",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Easter Monday",
+          "date": "2031-04-14",
+          "type": "Federal (public service)"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2031-05-19",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Saint-Jean-Baptiste Day (QC)",
+          "date": "2031-06-24",
+          "type": "Quebec statutory"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2031-07-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Civic Holiday (varies by province)",
+          "date": "2031-08-04",
+          "type": "Civic / provincial"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2031-09-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "National Day for Truth and Reconciliation",
+          "date": "2031-09-30",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2031-10-13",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2031-11-11",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2031-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2031-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2031-12-25",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Boxing Day",
+          "date": "2031-12-26",
+          "type": "Federal (widely observed)"
+        }
+      ],
+      "Alberta": [
+        {
+          "name": "New Year's Day",
+          "date": "2031-01-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Family Day (AB)",
+          "date": "2031-02-17",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2031-04-11",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2031-05-19",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2031-07-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Heritage Day (AB)",
+          "date": "2031-08-04",
+          "type": "Optional / civic"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2031-09-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2031-10-13",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2031-11-11",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2031-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2031-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2031-12-25",
+          "type": "Alberta general holiday"
+        }
+      ]
+    },
+    "2032": {
+      "Canada (Federal)": [
+        {
+          "name": "New Year's Day",
+          "date": "2032-01-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2032-03-26",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Easter Monday",
+          "date": "2032-03-29",
+          "type": "Federal (public service)"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2032-05-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Saint-Jean-Baptiste Day (QC)",
+          "date": "2032-06-24",
+          "type": "Quebec statutory"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2032-07-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Civic Holiday (varies by province)",
+          "date": "2032-08-02",
+          "type": "Civic / provincial"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2032-09-06",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "National Day for Truth and Reconciliation",
+          "date": "2032-09-30",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2032-10-11",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2032-11-11",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2032-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2032-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2032-12-25",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Boxing Day",
+          "date": "2032-12-26",
+          "type": "Federal (widely observed)"
+        }
+      ],
+      "Alberta": [
+        {
+          "name": "New Year's Day",
+          "date": "2032-01-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Family Day (AB)",
+          "date": "2032-02-16",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2032-03-26",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2032-05-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2032-07-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Heritage Day (AB)",
+          "date": "2032-08-02",
+          "type": "Optional / civic"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2032-09-06",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2032-10-11",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2032-11-11",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2032-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2032-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2032-12-25",
+          "type": "Alberta general holiday"
+        }
+      ]
+    },
+    "2033": {
+      "Canada (Federal)": [
+        {
+          "name": "New Year's Day",
+          "date": "2033-01-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2033-04-15",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Easter Monday",
+          "date": "2033-04-18",
+          "type": "Federal (public service)"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2033-05-23",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Saint-Jean-Baptiste Day (QC)",
+          "date": "2033-06-24",
+          "type": "Quebec statutory"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2033-07-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Civic Holiday (varies by province)",
+          "date": "2033-08-01",
+          "type": "Civic / provincial"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2033-09-05",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "National Day for Truth and Reconciliation",
+          "date": "2033-09-30",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2033-10-10",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2033-11-11",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2033-12-23",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2033-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2033-12-25",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Boxing Day",
+          "date": "2033-12-26",
+          "type": "Federal (widely observed)"
+        }
+      ],
+      "Alberta": [
+        {
+          "name": "New Year's Day",
+          "date": "2033-01-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Family Day (AB)",
+          "date": "2033-02-21",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2033-04-15",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2033-05-23",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2033-07-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Heritage Day (AB)",
+          "date": "2033-08-01",
+          "type": "Optional / civic"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2033-09-05",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2033-10-10",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2033-11-11",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2033-12-23",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2033-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2033-12-25",
+          "type": "Alberta general holiday"
+        }
+      ]
+    },
+    "2034": {
+      "Canada (Federal)": [
+        {
+          "name": "New Year's Day",
+          "date": "2034-01-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2034-04-07",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Easter Monday",
+          "date": "2034-04-10",
+          "type": "Federal (public service)"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2034-05-22",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Saint-Jean-Baptiste Day (QC)",
+          "date": "2034-06-24",
+          "type": "Quebec statutory"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2034-07-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Civic Holiday (varies by province)",
+          "date": "2034-08-07",
+          "type": "Civic / provincial"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2034-09-04",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "National Day for Truth and Reconciliation",
+          "date": "2034-09-30",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2034-10-09",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2034-11-11",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2034-12-22",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2034-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2034-12-25",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Boxing Day",
+          "date": "2034-12-26",
+          "type": "Federal (widely observed)"
+        }
+      ],
+      "Alberta": [
+        {
+          "name": "New Year's Day",
+          "date": "2034-01-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Family Day (AB)",
+          "date": "2034-02-20",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2034-04-07",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2034-05-22",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2034-07-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Heritage Day (AB)",
+          "date": "2034-08-07",
+          "type": "Optional / civic"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2034-09-04",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2034-10-09",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2034-11-11",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2034-12-22",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2034-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2034-12-25",
+          "type": "Alberta general holiday"
+        }
+      ]
+    },
+    "2035": {
+      "Canada (Federal)": [
+        {
+          "name": "New Year's Day",
+          "date": "2035-01-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2035-03-23",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Easter Monday",
+          "date": "2035-03-26",
+          "type": "Federal (public service)"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2035-05-21",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Saint-Jean-Baptiste Day (QC)",
+          "date": "2035-06-24",
+          "type": "Quebec statutory"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2035-07-01",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Civic Holiday (varies by province)",
+          "date": "2035-08-06",
+          "type": "Civic / provincial"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2035-09-03",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "National Day for Truth and Reconciliation",
+          "date": "2035-09-30",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2035-10-08",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2035-11-11",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2035-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2035-12-24",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2035-12-25",
+          "type": "Federal statutory"
+        },
+        {
+          "name": "Boxing Day",
+          "date": "2035-12-26",
+          "type": "Federal (widely observed)"
+        }
+      ],
+      "Alberta": [
+        {
+          "name": "New Year's Day",
+          "date": "2035-01-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Family Day (AB)",
+          "date": "2035-02-19",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2035-03-23",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Victoria Day",
+          "date": "2035-05-21",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Canada Day",
+          "date": "2035-07-01",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Heritage Day (AB)",
+          "date": "2035-08-06",
+          "type": "Optional / civic"
+        },
+        {
+          "name": "Labour Day",
+          "date": "2035-09-03",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Thanksgiving",
+          "date": "2035-10-08",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Remembrance Day",
+          "date": "2035-11-11",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Floater Day",
+          "date": "2035-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Eve",
+          "date": "2035-12-24",
+          "type": "Alberta general holiday"
+        },
+        {
+          "name": "Christmas Day",
+          "date": "2035-12-25",
+          "type": "Alberta general holiday"
+        }
+      ]
+    }
+  }
+}
