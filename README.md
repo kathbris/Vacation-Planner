@@ -12,7 +12,7 @@ A simple, single-page web app for staff to mark vacation days and export a PDF t
 
 ## Getting started
 1. Open `index.html` in a modern browser (Chrome, Edge, Firefox, Safari).
-2. Fill in your **name** and **manager** (pre-filled with Alex Hesse / Heather Setka for convenience).
+2. Fill in your **name** and **manager**.
 3. Choose your **region** and months, then click **Build calendar**.
 4. Click dates to mark vacation. Use **Clear marks** to reset.
 5. Click **Export PDF** to download a PDF snapshot.
