@@ -30,7 +30,6 @@
         <label>Province / Region</label>
         <select id="region">
           <option value="Alberta" selected>Alberta</option>
-          <option value="Canada (Federal)">Canada (Federal)</option>
         </select>
       </div>
       <div class="row">
@@ -54,10 +53,13 @@
           <small id="holidayTally">Selected: 0 • Remaining: 43</small>
         </div>
       </div>
+      <div id="budgetError" style="display:none;color:#dc2626;font-weight:bold;margin:.5rem 0;">
+        ⚠️ You have selected more days than available!
+      </div>
       <div class="actions">
         <button type="button" id="buildBtn">Build calendar</button>
         <button type="button" id="clearBtn" class="secondary">Clear marks</button>
-        <button type="button" id="exportBtn" class="primary">Print</button>
+        <button type="button" id="pdfBtn" class="primary">Export to PDF</button>
       </div>
     </form>
   </section>
@@ -67,7 +69,7 @@
   </main>
 
   <footer>
-    <small>Holidays are highlighted; click any date to toggle vacation. Optional civic holidays are shown with a dashed underline. Statutory holidays are grayed and cannot be selected.</small>
+    <small>Holidays and school closure days are highlighted and will not be counted towards vacation; click any date to toggle vacation.</small>
   </footer>
 
   <script src="app.js"></script>

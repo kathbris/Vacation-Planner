@@ -27,7 +27,7 @@ const holidaysReady = fetch('holidays-2025.json').then(r=>r.json()).then(json=>{
 const form = document.getElementById('plannerForm');
 const buildBtn = document.getElementById('buildBtn');
 const clearBtn = document.getElementById('clearBtn');
-const exportBtn = document.getElementById('exportBtn');
+const pdfBtn = document.getElementById('pdfBtn');
 const holidayBudgetInput = document.getElementById('holidayBudget');
 const holidayTallyEl = document.getElementById('holidayTally');
 
@@ -41,15 +41,15 @@ clearBtn.addEventListener('click', () => {
   document.querySelectorAll('.day.vacation').forEach(el=>el.classList.remove('vacation'));
   updateTotals();
 });
+pdfBtn.addEventListener('click', exportToPDF);
 
 function parseISO(dateStr){
   const [y,m,d] = dateStr.split('-').map(n=>parseInt(n,10));
   return new Date(y, m-1, d);
 }
 
-function getRegionHolidays(region){
+function getRegionHolidaysForYear(region, year){
   if(!HOLIDAYS) return [];
-  const year = parseInt(document.getElementById('year').value, 10);
   const yearStr = String(year);
   
   // Check if we have data for this year
@@ -60,33 +60,57 @@ function getRegionHolidays(region){
 
   const yearData = HOLIDAYS.years[yearStr];
 
-  // If no specific region requested, return the federal baseline
-  if(!region || region === 'Canada (Federal)'){
-    return (yearData['Canada (Federal)'] || []).map(h=>({...h, scope:'Federal'}));
-  }
-
-  // For a specific region (e.g., Alberta), return only holidays observed in that region
-  // Start from the region's own list (prefer local definitions), keyed by ISO date
-  const regionList = yearData[region] || [];
+  // Return Alberta holidays
+  const regionList = yearData['Alberta'] || [];
   const byDate = new Map();
-  regionList.forEach(h => byDate.set(h.date, {...h, scope: region}));
-
-  // Ensure we only include federal entries that are also observed in the region (i.e., same date)
-  // This removes federal-only holidays that the region does not observe.
-  (yearData['Canada (Federal)'] || []).forEach(h => {
-    if(byDate.has(h.date)){
-      // keep the region's version (already in map); no action needed
-    }
-  });
+  regionList.forEach(h => byDate.set(h.date, {...h, scope: 'Alberta'}));
 
   return Array.from(byDate.values());
+}
+
+function getRegionHolidays(region){
+  const year = parseInt(document.getElementById('year').value, 10);
+  return getRegionHolidaysForYear(region, year);
+}
+
+// Helper function to get form input values
+function getFormInputs(){
+  return {
+    name: document.getElementById('employeeName').value || 'Employee',
+    manager: document.getElementById('managerName').value || 'Manager',
+    year: document.getElementById('year').value,
+    region: document.getElementById('region').value
+  };
+}
+
+// Helper function to get exclusion settings
+function getExclusionSettings(){
+  const container = document.getElementById('calendarContainer');
+  return {
+    excludeWeekends: container.dataset.excludeWeekends === '1',
+    excludeHolidays: container.dataset.excludeHolidays === '1'
+  };
+}
+
+// Helper function to calculate total vacation days
+function calculateVacationDays(){
+  const { excludeWeekends, excludeHolidays } = getExclusionSettings();
+  let total = 0;
+  document.querySelectorAll('.day.vacation').forEach(cell => {
+    const isWeekend = cell.classList.contains('weekend');
+    const isHoliday = cell.classList.contains('holiday');
+    if(excludeWeekends && isWeekend) return;
+    if(excludeHolidays && isHoliday) return;
+    total++;
+  });
+  return total;
 }
 
 function buildCalendar(){
   const container = document.getElementById('calendarContainer');
   container.innerHTML = '';
-  const year = parseInt(document.getElementById('year').value, 10);
-  const region = document.getElementById('region').value;
+  const { year, region } = getFormInputs();
+  const yearNum = parseInt(year, 10);
   const excludeWeekends = document.getElementById('excludeWeekends').checked;
   const excludeHolidays = document.getElementById('excludeHolidays').checked;
 
@@ -109,18 +133,27 @@ function buildCalendar(){
     months.sort((a,b)=>a-b);
   }
 
-  const holidays = getRegionHolidays(region);
+  const shouldUsePriorYearForDecember = hasDecember && hasJanuary;
+  
+  // Build holidays map - include both current year and prior year if December is selected
   const holidaysByISO = new Map();
+  const holidays = getRegionHolidays(region);
   holidays.forEach(h => {
     holidaysByISO.set(h.date, h);
   });
-
-  const shouldUsePriorYearForDecember = hasDecember && hasJanuary;
+  
+  // If December is selected and we're using prior year for December, also load prior year holidays
+  if(shouldUsePriorYearForDecember){
+    const priorYearHolidays = getRegionHolidaysForYear(region, yearNum - 1);
+    priorYearHolidays.forEach(h => {
+      holidaysByISO.set(h.date, h);
+    });
+  }
 
   months.forEach(month => {
     // If this is December and both Dec/Jan are selected, use previous year
     const isDecember = month === 12;
-    const displayYear = (isDecember && shouldUsePriorYearForDecember) ? year - 1 : year;
+    const displayYear = (isDecember && shouldUsePriorYearForDecember) ? yearNum - 1 : yearNum;
     
     const cal = document.createElement('section');
     cal.className = 'calendar';
@@ -175,9 +208,6 @@ function buildCalendar(){
       if(h || isSchoolClosed){
         cell.classList.add('holiday');
         // Optional / civic marking
-        if(h && /Optional|civic|Civic/i.test(h.type)){
-          cell.classList.add('optional');
-        }
         // Statutory (cannot be selected)
         if(h && /statutory/i.test(h.type)){
           cell.classList.add('statutory');
@@ -262,10 +292,7 @@ function buildCalendar(){
     const totals = document.createElement('div');
     totals.className = 'totals';
     totals.innerHTML = `
-      <span class="badge"><span class="swatch h"></span>Holiday</span>
-      <span class="badge"><span class="swatch s"></span>Statutory</span>
-      <span class="badge"><span class="swatch o"></span>Optional/civic</span>
-      <span class="badge"><span class="swatch w"></span>Weekend</span>
+      <span class="badge"><span class="swatch h"></span>Holiday/School Closed</span>
       <strong>Days booked: <span class="monthTotal">0</span></strong>
     `;
     cal.appendChild(grid);
@@ -281,9 +308,7 @@ function buildCalendar(){
 }
 
 function updateTotals(){
-  const container = document.getElementById('calendarContainer');
-  const excludeWeekends = container.dataset.excludeWeekends === '1';
-  const excludeHolidays = container.dataset.excludeHolidays === '1';
+  const { excludeWeekends, excludeHolidays } = getExclusionSettings();
 
   let grand = 0;
   document.querySelectorAll('.calendar').forEach(cal => {
@@ -313,54 +338,89 @@ function updateTotals(){
   // Update holiday budget tally (selected vs remaining)
   const hbEl = document.getElementById('holidayBudget');
   const tallyEl = document.getElementById('holidayTally');
+  const errorEl = document.getElementById('budgetError');
   if(tallyEl){
     const budget = hbEl ? (parseInt(hbEl.value, 10) || 0) : 0;
     const remaining = budget - grand;
     tallyEl.textContent = `Selected: ${grand} • Remaining: ${remaining}`;
+    
+    // Show error if budget exceeded
+    if(errorEl){
+      if(remaining < 0){
+        errorEl.style.display = 'block';
+      } else {
+        errorEl.style.display = 'none';
+      }
+    }
   }
 }
 
-// Print function
-exportBtn.addEventListener('click', () => {
-  const container = document.querySelector('.print-area');
-  const name = document.getElementById('employeeName').value || 'Employee';
-  const manager = document.getElementById('managerName').value || 'Manager';
-  const year = document.getElementById('year').value;
+// Export to PDF function
+async function exportToPDF() {
+  const { jsPDF } = window.jspdf;
+  const container = document.getElementById('calendarContainer');
+  const { name, manager, year } = getFormInputs();
+  const totalDays = calculateVacationDays();
 
-  // Calculate total vacation days
-  const containerEl = document.getElementById('calendarContainer');
-  const excludeWeekends = containerEl.dataset.excludeWeekends === '1';
-  const excludeHolidays = containerEl.dataset.excludeHolidays === '1';
-  let totalDays = 0;
-  document.querySelectorAll('.day.vacation').forEach(cell => {
-    const isWeekend = cell.classList.contains('weekend');
-    const isHoliday = cell.classList.contains('holiday');
-    if(excludeWeekends && isWeekend) return;
-    if(excludeHolidays && isHoliday) return;
-    totalDays++;
-  });
+  // Create PDF
+  const pdf = new jsPDF('p', 'mm', 'a4');
+  const pageWidth = pdf.internal.pageSize.getWidth();
+  const pageHeight = pdf.internal.pageSize.getHeight();
+  const margin = 15;
+  let yPos = margin;
 
-  // Add print header temporarily
-  const cover = document.createElement('div');
-  cover.id = 'printHeader';
-  cover.style.padding = '1rem 2rem';
-  cover.style.background = '#ffffff';
-  cover.style.color = '#111827';
-  cover.style.fontFamily = 'system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,sans-serif';
-  cover.innerHTML = `<h2 style="margin:.25rem 0">Vacation Planner — ${year}</h2>
-    <p style="margin:0"><strong>Employee:</strong> ${name} &nbsp; | &nbsp; <strong>Manager:</strong> ${manager}</p>
-    <p style="margin:0"><strong>Total Vacation Days Selected:</strong> ${totalDays}</p>
-    <p style="margin:.25rem 0 0 0;font-size:.9rem;color:#374151">Generated on ${new Date().toLocaleDateString()}</p>`;
-  container.prepend(cover);
+  // Add header
+  pdf.setFontSize(20);
+  pdf.setFont('helvetica', 'bold');
+  pdf.text(`Vacation Planner — ${year}`, margin, yPos);
+  yPos += 10;
 
-  // Trigger print dialog
-  window.print();
+  pdf.setFontSize(11);
+  pdf.setFont('helvetica', 'normal');
+  pdf.text(`Employee: ${name}`, margin, yPos);
+  yPos += 6;
+  pdf.text(`Manager: ${manager}`, margin, yPos);
+  yPos += 6;
+  pdf.text(`Total Vacation Days Selected: ${totalDays}`, margin, yPos);
+  yPos += 6;
+  pdf.setFontSize(9);
+  pdf.setTextColor(100);
+  pdf.text(`Generated on ${new Date().toLocaleDateString()}`, margin, yPos);
+  yPos += 10;
+  pdf.setTextColor(0);
 
-  // Remove header after print dialog closes
-  setTimeout(() => {
-    cover.remove();
-  }, 100);
-});
+  // Get all calendar elements
+  const calendars = container.querySelectorAll('.calendar');
+  
+  for (let i = 0; i < calendars.length; i++) {
+    const calendar = calendars[i];
+    
+    // Convert calendar to canvas
+    const canvas = await html2canvas(calendar, {
+      scale: 2,
+      backgroundColor: '#ffffff',
+      logging: false
+    });
+
+    const imgData = canvas.toDataURL('image/png');
+    const imgWidth = pageWidth - (margin * 2);
+    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+    // Check if we need a new page
+    if (yPos + imgHeight > pageHeight - margin) {
+      pdf.addPage();
+      yPos = margin;
+    }
+
+    // Add calendar image
+    pdf.addImage(imgData, 'PNG', margin, yPos, imgWidth, imgHeight);
+    yPos += imgHeight + 5;
+  }
+
+  // Save the PDF
+  const filename = `Vacation-Plan-${year}-${name.replace(/\s+/g, '-')}.pdf`;
+  pdf.save(filename);
+}
 
 // Auto-build on load: set next year, check only June/July/August, set holiday budget default, and build calendar
 (function autoBuildOnLoad(){
