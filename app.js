@@ -91,7 +91,23 @@ function buildCalendar(){
   const excludeHolidays = document.getElementById('excludeHolidays').checked;
 
   const months = Array.from(document.querySelectorAll('.month-list input:checked')).map(cb=>parseInt(cb.value,10));
-  months.sort((a,b)=>a-b);
+  
+  // Check if both December (12) and January (1) are selected
+  const hasDecember = months.includes(12);
+  const hasJanuary = months.includes(1);
+  
+  // Custom sort: if both Dec and Jan are selected, Dec comes first
+  if (hasDecember && hasJanuary) {
+    months.sort((a,b) => {
+      if (a === 12) return -1; // December goes first
+      if (b === 12) return 1;
+      if (a === 1) return -1;  // January goes second
+      if (b === 1) return 1;
+      return a - b;            // Everything else in normal order
+    });
+  } else {
+    months.sort((a,b)=>a-b);
+  }
 
   const holidays = getRegionHolidays(region);
   const holidaysByISO = new Map();
@@ -99,11 +115,17 @@ function buildCalendar(){
     holidaysByISO.set(h.date, h);
   });
 
+  const shouldUsePriorYearForDecember = hasDecember && hasJanuary;
+
   months.forEach(month => {
+    // If this is December and both Dec/Jan are selected, use previous year
+    const isDecember = month === 12;
+    const displayYear = (isDecember && shouldUsePriorYearForDecember) ? year - 1 : year;
+    
     const cal = document.createElement('section');
     cal.className = 'calendar';
     const header = document.createElement('header');
-    header.innerHTML = `<div><strong>${MONTH_NAMES[month-1]} ${year}</strong></div>`+
+    header.innerHTML = `<div><strong>${MONTH_NAMES[month-1]} ${displayYear}</strong></div>`+
       `<div class="meta">Region: ${region}</div>`;
     cal.appendChild(header);
 
@@ -127,39 +149,43 @@ function buildCalendar(){
     const days = document.createElement('div');
     days.className = 'days';
 
-    const firstDay = new Date(year, month-1, 1);
+    const firstDay = new Date(displayYear, month-1, 1);
     const startWeekday = firstDay.getDay();
-    const numDays = new Date(year, month, 0).getDate();
+    const numDays = new Date(displayYear, month, 0).getDate();
 
     const workweekStart = startWeekday === 0 ? 0 : startWeekday - 1;
     
     // Build all day cells first (without checkboxes)
     const dayCells = [];
     for(let d=1; d<=numDays; d++){
-      const date = new Date(year, month-1, d);
+      const date = new Date(displayYear, month-1, d);
       // Skip weekends
       if([0,6].includes(date.getDay())) continue;
       
-      const iso = `${year}-${String(month).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+      const iso = `${displayYear}-${String(month).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
       const cell = document.createElement('div');
       cell.className = 'day';
       cell.dataset.iso = iso;
       cell.innerHTML = `<div>${d}</div>`;
+      
+      // Check for "School Closed" period (Dec 26-31 and Jan 1)
+      const isSchoolClosed = (month === 12 && d >= 26) || (month === 1 && d === 1);
+      
       const h = holidaysByISO.get(iso);
-      if(h){
+      if(h || isSchoolClosed){
         cell.classList.add('holiday');
         // Optional / civic marking
-        if(/Optional|civic|Civic/i.test(h.type)){
+        if(h && /Optional|civic|Civic/i.test(h.type)){
           cell.classList.add('optional');
         }
         // Statutory (cannot be selected)
-        if(/statutory/i.test(h.type)){
+        if(h && /statutory/i.test(h.type)){
           cell.classList.add('statutory');
           cell.setAttribute('aria-disabled','true');
         }
         const label = document.createElement('div');
         label.className = 'label';
-        label.textContent = h.name;
+        label.textContent = isSchoolClosed ? 'School Closed' : h.name;
         cell.appendChild(label);
       }
 
