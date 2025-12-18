@@ -79,7 +79,7 @@ function getFormInputs(){
     name: document.getElementById('employeeName').value || 'Employee',
     manager: document.getElementById('managerName').value || 'Manager',
     year: document.getElementById('year').value,
-    region: document.getElementById('region').value
+    region: 'Alberta'
   };
 }
 

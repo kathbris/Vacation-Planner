@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="com.vacationplanner.scorm" version="1.0"
+          xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
+          xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
+          xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd
+                              http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd
+                              http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <imsmd:lom>
+      <imsmd:general>
+        <imsmd:title>
+          <imsmd:langstring xml:lang="en">Vacation Planner 2025</imsmd:langstring>
+        </imsmd:title>
+        <imsmd:description>
+          <imsmd:langstring xml:lang="en">Interactive vacation planning web application for marking vacation days and generating PDF reports</imsmd:langstring>
+        </imsmd:description>
+        <imsmd:keyword>
+          <imsmd:langstring xml:lang="en">vacation</imsmd:langstring>
+        </imsmd:keyword>
+        <imsmd:keyword>
+          <imsmd:langstring xml:lang="en">planner</imsmd:langstring>
+        </imsmd:keyword>
+        <imsmd:keyword>
+          <imsmd:langstring xml:lang="en">calendar</imsmd:langstring>
+        </imsmd:keyword>
+        <imsmd:keyword>
+          <imsmd:langstring xml:lang="en">holidays</imsmd:langstring>
+        </imsmd:keyword>
+      </imsmd:general>
+      <imsmd:lifecycle>
+        <imsmd:version>
+          <imsmd:langstring xml:lang="en">1.0</imsmd:langstring>
+        </imsmd:version>
+      </imsmd:lifecycle>
+      <imsmd:technical>
+        <imsmd:format>text/html</imsmd:format>
+      </imsmd:technical>
+    </imsmd:lom>
+  </metadata>
+  <organizations default="vacationplanner_org">
+    <organization identifier="vacationplanner_org">
+      <title>Vacation Planner 2025</title>
+      <item identifier="item_1" identifierref="resource_1">
+        <title>Vacation Planner</title>
+        <metadata>
+          <imsmd:lom>
+            <imsmd:general>
+              <imsmd:title>
+                <imsmd:langstring xml:lang="en">Vacation Planner</imsmd:langstring>
+              </imsmd:title>
+              <imsmd:description>
+                <imsmd:langstring xml:lang="en">Mark vacation days, view totals, and export to PDF for manager approval</imsmd:langstring>
+              </imsmd:description>
+            </imsmd:general>
+          </imsmd:lom>
+        </metadata>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="resource_1" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <metadata>
+        <imsmd:lom>
+          <imsmd:general>
+            <imsmd:title>
+              <imsmd:langstring xml:lang="en">Vacation Planner</imsmd:langstring>
+            </imsmd:title>
+            <imsmd:description>
+              <imsmd:langstring xml:lang="en">Interactive vacation planning application with Canadian holiday support</imsmd:langstring>
+            </imsmd:description>
+          </imsmd:general>
+          <imsmd:technical>
+            <imsmd:format>text/html</imsmd:format>
+          </imsmd:technical>
+        </imsmd:lom>
+      </metadata>
+      <file href="index.html"/>
+      <file href="app.js"/>
+      <file href="styles.css"/>
+      <file href="holidays-2025.json"/>
+    </resource>
+  </resources>
+</manifest>
