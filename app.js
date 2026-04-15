@@ -331,7 +331,12 @@ function updateTotals(){
     banner.style.textAlign = 'right';
     banner.style.padding = '0 2rem 1rem';
     banner.style.fontWeight = '700';
-    document.body.insertBefore(banner, document.querySelector('footer'));
+    const footer = document.querySelector('footer');
+    if(footer && footer.parentNode === document.body){
+      document.body.insertBefore(banner, footer);
+    } else {
+      document.body.appendChild(banner);
+    }
   }
   banner.textContent = `Total vacation days: ${grand}`;
 
@@ -422,16 +427,93 @@ async function exportToPDF() {
   pdf.save(filename);
 }
 
+// Detect if running in Brightspace and get user name
+function getBrightspaceUserName(){
+  return new Promise((resolve) => {
+    // Check if we're in an iframe
+    if(window.self === window.top){
+      resolve(null);
+      return;
+    }
+    
+    let resolved = false;
+    const doResolve = (value) => {
+      if(!resolved){
+        resolved = true;
+        resolve(value);
+      }
+    };
+    
+    try {
+      // Method 1: Try to access user info from parent window's DOM
+      const parentDoc = window.parent.document;
+      if(parentDoc){
+        // Look for d2l-navigation with user info
+        const navUser = parentDoc.querySelector('d2l-navigation[user-name]');
+        if(navUser){
+          const userName = navUser.getAttribute('user-name');
+          if(userName){
+            doResolve(userName);
+            return;
+          }
+        }
+        
+        // Look for user menu or profile elements
+        const userMenu = parentDoc.querySelector('.d2l-navigation-s-profile-menu-name, .vui-heading-2');
+        if(userMenu && userMenu.textContent.trim()){
+          doResolve(userMenu.textContent.trim());
+          return;
+        }
+      }
+      
+      // Method 2: Try accessing D2L LP User Context
+      if(window.parent.D2L && window.parent.D2L.LP && window.parent.D2L.LP.Web && 
+         window.parent.D2L.LP.Web.UI && window.parent.D2L.LP.Web.UI.Desktop && 
+         window.parent.D2L.LP.Web.UI.Desktop.MasterPages && 
+         window.parent.D2L.LP.Web.UI.Desktop.MasterPages.UserName){
+        doResolve(window.parent.D2L.LP.Web.UI.Desktop.MasterPages.UserName);
+        return;
+      }
+      
+      // Method 3: Check for user context in window object
+      if(window.parent.D2LPROFILE){
+        const profile = window.parent.D2LPROFILE;
+        if(profile.FirstName && profile.LastName){
+          doResolve(`${profile.FirstName} ${profile.LastName}`);
+          return;
+        }
+      }
+      
+      doResolve(null);
+    } catch(e){
+      // Cross-origin restrictions - this is expected if loaded from different domain
+      console.log('Cannot access parent window (cross-origin restriction)');
+      doResolve(null);
+    }
+    
+    // Timeout after 1 second if nothing found
+    setTimeout(() => doResolve(null), 1000);
+  });
+}
+
 // Auto-build on load: set next year, check only June/July/August, set holiday budget default, and build calendar
-(function autoBuildOnLoad(){
+(async function autoBuildOnLoad(){
   const yearInput = document.getElementById('year');
-  if(yearInput) yearInput.value = new Date().getFullYear() + 1; // next year
+  if(yearInput) yearInput.value = new Date().getFullYear(); // next year
   // check only June (6), July (7), August (8)
   document.querySelectorAll('.month-list input').forEach(cb=>{
     cb.checked = ['6','7','8'].includes(cb.value);
   });
   const hb = document.getElementById('holidayBudget');
   if(hb) hb.value = 43;
+  
+  // Try to get user name from Brightspace
+  const userName = await getBrightspaceUserName();
+  if(userName){
+    const nameInput = document.getElementById('employeeName');
+    if(nameInput) nameInput.value = userName;
+  }
+  
   // Build calendars after holidays load
   holidaysReady.then(() => buildCalendar());
 })();
